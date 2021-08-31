@@ -1,0 +1,8 @@
+name: "InstantCommand"
+version: "1.0"
+main: "vb.$instantcommand.PluginMain"
+api-version: 1.13
+author: "Martinez"
+description: "Plugin allows your players to perform configured command really fast!"
+commands:
+permissions:
