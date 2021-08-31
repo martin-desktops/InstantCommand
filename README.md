@@ -1,5 +1,4 @@
 ﻿# InstantCommand
- ![example](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 The plugin allows your players to perform configured command really fast.
 
