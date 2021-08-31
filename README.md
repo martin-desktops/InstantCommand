@@ -1,4 +1,6 @@
 ﻿# InstantCommand
+ ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
 The plugin allows your players to perform configured command really fast.
 
 Just use the Shift + F key combination.
