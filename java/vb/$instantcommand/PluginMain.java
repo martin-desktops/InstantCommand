@@ -17,6 +17,11 @@ public class PluginMain extends JavaPlugin implements Listener {
 		getDataFolder().mkdir();
 		getServer().getPluginManager().registerEvents(this, this);
 		saveDefaultConfig();
+		try {
+			new Metrics(PluginMain.getInstance(), ((int) 12667d));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -25,6 +30,16 @@ public class PluginMain extends JavaPlugin implements Listener {
 
 	@Override
 	public boolean onCommand(CommandSender commandSender, Command command, String label, String[] commandArgs) {
+		if (command.getName().equalsIgnoreCase("instantcommandreload")) {
+			try {
+				PluginMain.getInstance().reloadConfig();
+				commandSender
+						.sendMessage(String.valueOf(PluginMain.getInstance().getConfig().get("reload.reloadmessage")));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return true;
+		}
 		return true;
 	}
 
@@ -68,12 +83,15 @@ public class PluginMain extends JavaPlugin implements Listener {
 		return instance;
 	}
 
-	@EventHandler(priority = EventPriority.HIGH)
+	@EventHandler(priority = EventPriority.NORMAL)
 	public void onPlayerSwapHandItemsEvent1(org.bukkit.event.player.PlayerSwapHandItemsEvent event) throws Exception {
+		Object $897859f6655555855a890e51483ab5e6 = null;
 		if (event.getPlayer().isSneaking()) {
 			event.setCancelled(true);
 			event.getPlayer()
 					.performCommand(String.valueOf(PluginMain.getInstance().getConfig().get("config.command")));
+			if (((boolean) (Object) $897859f6655555855a890e51483ab5e6)) {
+			}
 		}
 	}
 }

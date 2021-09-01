@@ -1,2 +1,4 @@
 config:
     command: 'spawn'
+reload:
+    reloadmessage: 'Reloaded!'
